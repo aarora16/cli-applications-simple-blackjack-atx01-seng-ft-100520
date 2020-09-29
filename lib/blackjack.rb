@@ -54,11 +54,17 @@ def invalid_command
   puts "Please enter a valid command"
 end
 
-#####################################################
-# get every test to pass before coding runner below #
-#####################################################
 
 def runner
-  # code runner here
+  welcome
+  card_value = initial_round
+
+  until card_value > 21 do
+    card_value = hit?(card_value)
+    display_card_total(card_value)
+  end
+
+  end_game(card_value)
 end
+
     
